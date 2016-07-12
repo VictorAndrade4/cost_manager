@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @categories = Category.all
   end
 
   def show
@@ -28,6 +29,11 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item.destroy
+    respond_to do |format|
+      format.html { redirect_to categories_url, notice: 'Item was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private

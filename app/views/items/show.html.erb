@@ -1,14 +1,11 @@
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
+<%= @item.name %>
+<br>
+<%= "Price: #{@item.price}" %>
+<br>
 
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @item.category.name %>
-</p>
+<strong>Category:</strong>
+<%= @item.category.name %>
+
+<br>
+<%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>

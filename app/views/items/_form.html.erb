@@ -5,9 +5,14 @@
   </div>
   <div class="field">
     <%= f.label :price %><br>
-    <%= f.number_field :price, value: 1 %>
+    <%= f.number_field :price, value: 0, step: 'any' %>
+  </div>
+  <div class="field">
+    <%= f.label :Category %>
+    <%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true%>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

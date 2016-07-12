@@ -13,6 +13,17 @@
  *= require_tree .
  *= require_self
  */
- .main{
-   text-align: center;
- }
+#main{
+  text-align: center;
+  background-color: #B0E0E6;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 140%;
+}
+
+h1{
+  color: #006699;
+}
+
+a{
+  text-decoration: none;
+}
