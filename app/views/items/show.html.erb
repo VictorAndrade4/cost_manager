@@ -1,11 +1,20 @@
-<%= @item.name %>
-<br>
-<%= "Price: #{@item.price}" %>
-<br>
+<p id="notice"><%= notice %></p>
+<h1><%= @item.name %></h1>
+<br><br>
 
+<strong>Price: </strong>
+<%= @item.price %>
 
-<strong>Category:</strong>
+<br><br>
+<strong>Category: </strong>
 <%= @item.category.name %>
 
-<br>
+<br><br>
+<strong>Date:</strong>
+<%= @item.created_at.strftime("%d/%m/%Y") %>
+<strong> at: </strong>
+<%= @item.created_at.strftime("%H:%M:%S") %>
+
+<br><br>
+<%= link_to 'Back', @item.category %> |
 <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @sort_items = @category.items.to_a.sort! { |x,y| y.created_at<=>x.created_at }
   end
 
   # GET /categories/new

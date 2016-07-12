@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     respond_to do |format|
       if @item.save
-        format.html { redirect_to root_path, notice: 'Item was successfully created.' }
+        format.html { redirect_to @item.category, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
@@ -29,9 +29,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    item = @item
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to item.category, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
